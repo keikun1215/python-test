@@ -9,7 +9,12 @@ bot = interactions.Client(token=os.getenv("token"))
 )
 async def help(ctx: interactions.CommandContext):
     await ctx.send(embeds=[interactions.Embed(
-        title="test"
+        title="Server help",
+        description="""1. **How to report**"""
+    )],components=[interactions.Button(
+        style=interactions.ButtonStyle.DANGER,
+        label="Delete",
+        custom_id="delete_message",
     )])
 
 bot.start()
