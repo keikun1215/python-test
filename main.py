@@ -13,11 +13,11 @@ async def help(ctx: interactions.CommandContext):
         description="""1. **How to report**"""
     )],components=[interactions.Button(
         style=interactions.ButtonStyle.PRIMARY,
-        emoji="◀️",
+        emoji="◀",
         custom_id="previous",
     ),interactions.Button(
         style=interactions.ButtonStyle.PRIMARY,
-        emoji="▶️",
+        emoji="▶"
         custom_id="next",
     )])
 
