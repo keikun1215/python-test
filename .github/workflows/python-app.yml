@@ -34,6 +34,8 @@ jobs:
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
     - name: Run main.py
       run: |
+        touch .env
+        echo -e "token=${{ secrets.token }}" > .env
         python main.py
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
