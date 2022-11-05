@@ -4,10 +4,12 @@ load_dotenv("./.env")
 bot = interactions.Client(token=os.getenv("token"))
 
 @bot.command(
-    name="hello",
-    description="Test command"
+    name="help",
+    description="Help of this server"
 )
-async def my_first_command(ctx: interactions.CommandContext):
-    await ctx.send("Hello!")
+async def help(ctx: interactions.CommandContext):
+    await ctx.send({"embeds":[interactions.Embed(
+        title="test"
+    )]})
 
 bot.start()
