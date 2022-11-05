@@ -1,10 +1,13 @@
 name: Python application
 
 on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 */6 * * *'
   push:
-    branches: [ "main" ]
+    branches: [ main ]
   pull_request:
-    branches: [ "main" ]
+    branches: [ main ]
 
 permissions:
   contents: read
@@ -32,3 +35,6 @@ jobs:
     - name: Run main.py
       run: |
         python main.py
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
