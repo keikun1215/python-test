@@ -17,7 +17,7 @@ async def help(ctx: interactions.CommandContext):
         custom_id="previous",
     ),interactions.Button(
         style=interactions.ButtonStyle.PRIMARY,
-        emoji="▶"
+        emoji="▶",
         custom_id="next",
     )])
 
