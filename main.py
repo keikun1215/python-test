@@ -12,9 +12,13 @@ async def help(ctx: interactions.CommandContext):
         title="Server help",
         description="""1. **How to report**"""
     )],components=[interactions.Button(
-        style=interactions.ButtonStyle.DANGER,
-        label="Delete",
-        custom_id="delete_message",
+        style=interactions.ButtonStyle.PRIMARY,
+        label="◀️",
+        custom_id="previous",
+    ),interactions.Button(
+        style=interactions.ButtonStyle.PRIMARY,
+        label="▶️",
+        custom_id="next",
     )])
 
 bot.start()
