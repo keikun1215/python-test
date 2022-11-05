@@ -8,8 +8,8 @@ bot = interactions.Client(token=os.getenv("token"))
     description="Help of this server"
 )
 async def help(ctx: interactions.CommandContext):
-    await ctx.send({"embeds":[interactions.Embed(
+    await ctx.send(embeds=[interactions.Embed(
         title="test"
-    )]})
+    )])
 
 bot.start()
