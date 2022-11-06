@@ -10,9 +10,17 @@ bot = interactions.Client(token=os.getenv("token"))
 async def help(ctx: interactions.CommandContext):
     await ctx.send(embeds=[interactions.Embed(
         title="Server help menu"
-    )],components=[interactions.Button(label="a",custom_id="helpmenu")])
+    )],components=[interactions.SelectMenu(
+        options=[interactions.SelectOption(
+            label="How to report",
+            value="hm_htr",
+            description="How to report message",
+        )],
+        placeholder="CLICK ME",
+        custom_id="helpmenu",
+    )])
 @bot.component("helpmenu")
-async def primary_component(ctx: interactions.CommandContext):
+async def response(ctx: interactions.CommandContext):
     await ctx.send("test", ephemeral=True)
 
 bot.start()
