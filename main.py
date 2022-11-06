@@ -19,7 +19,7 @@ async def help(ctx: interactions.CommandContext):
         placeholder="CLICK ME",
         custom_id="helpmenu",
     )])
-@bot.component("hm_htr")
+@bot.selectmenu("hm_htr")
 async def selectmenu_response(ctx):
     await ctx.send("test", ephemeral=True)
 
