@@ -20,7 +20,7 @@ async def help(ctx: interactions.CommandContext):
         custom_id="helpmenu",
     )])
 @bot.component("helpmenu")
-async def primary_component(ctx: interactions.CommandContext):
+async def primary_component(ctx):
     await ctx.send("test", ephemeral=True)
 
 bot.start()
