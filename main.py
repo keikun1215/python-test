@@ -19,8 +19,8 @@ async def help(ctx: interactions.CommandContext):
         placeholder="CLICK ME",
         custom_id="helpmenu",
     )])
-@bot.selectmenu("hm_htr")
-async def selectmenu_response(ctx):
+@bot.select("hm_htr")
+async def select_response(ctx):
     await ctx.send("test", ephemeral=True)
 
 bot.start()
